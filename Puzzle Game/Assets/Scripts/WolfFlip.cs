@@ -20,11 +20,11 @@ public class WolfFlip : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
-            wolfSelected = true;
+            wolfSelected = false;
         }
         if (Input.GetKey(KeyCode.Alpha4))
         {
-            wolfSelected = false;
+            wolfSelected = true;
         }
 
 

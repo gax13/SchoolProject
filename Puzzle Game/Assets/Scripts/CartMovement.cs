@@ -8,8 +8,8 @@ public class CartMovement : MonoBehaviour
     public Animator animator;
     public bool cartSelected = true;
     public bool zombieSelected = false;
-    public bool wolfSelected = false;
     public bool batSelected = false;
+    public bool wolfSelected = false;
     public GameObject Player;
     public GameObject zombie;
     public GameObject wolf;
@@ -29,29 +29,29 @@ public class CartMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha1)){
             cartSelected = true;
             zombieSelected = false;
-            wolfSelected = false;
             batSelected = false;
+            wolfSelected = false;
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
             cartSelected = false;
             zombieSelected = true;
-            wolfSelected = false;
             batSelected = false;
+            wolfSelected = false;
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
             cartSelected = false;
             zombieSelected = false;
-            wolfSelected = true;
-            batSelected = false;
+            batSelected = true;
+            wolfSelected = false;
         }
         if (Input.GetKey(KeyCode.Alpha4))
         {
             cartSelected = false;
             zombieSelected = false;
-            wolfSelected = false;
-            batSelected = true;
+            batSelected = false;
+            wolfSelected = true;
         }
 
         if (cartSelected == true)

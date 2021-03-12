@@ -23,11 +23,11 @@ public class BatFlip : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
-            batSelected = false;
+            batSelected = true;
         }
         if (Input.GetKey(KeyCode.Alpha4))
         {
-            batSelected = true;
+            batSelected = false;
         }
 
 

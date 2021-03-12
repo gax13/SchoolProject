@@ -20,7 +20,7 @@ public class ZombieHangingCollision : MonoBehaviour
         if (batcollision == true)
         {
             Debug.Log("batcollision");
-            Zombie.transform.position = new Vector3(-1, -1, 0);
+            Zombie.transform.position = new Vector3(0, -1, 0);
             CartMovement.Instance.zombiespawned = true;
             ChangeSprite2();
             batcollision = false;
