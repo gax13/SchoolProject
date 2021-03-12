@@ -646,6 +646,7 @@ GameObject:
   - component: {fileID: 467632933}
   - component: {fileID: 467632935}
   - component: {fileID: 467632936}
+  - component: {fileID: 467632934}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -756,13 +757,25 @@ MonoBehaviour:
   animator: {fileID: 467632936}
   cartSelected: 1
   zombieSelected: 0
-  wolfSelected: 0
   batSelected: 0
+  wolfSelected: 0
   Player: {fileID: 467632929}
   zombie: {fileID: 577691573}
   wolf: {fileID: 729508570}
   bat: {fileID: 139219981}
   zombiespawned: 1
+--- !u!114 &467632934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467632929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448c798335616fb47ba28e7dc9e705d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &467632935
 Rigidbody2D:
   serializedVersion: 4

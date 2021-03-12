@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 467632933}
   - component: {fileID: 467632935}
   - component: {fileID: 467632936}
+  - component: {fileID: 467632934}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -659,13 +660,25 @@ MonoBehaviour:
   animator: {fileID: 467632936}
   cartSelected: 1
   zombieSelected: 0
-  wolfSelected: 0
   batSelected: 0
+  wolfSelected: 0
   Player: {fileID: 467632929}
   zombie: {fileID: 577691573}
   wolf: {fileID: 1069214422}
   bat: {fileID: 405868862}
   zombiespawned: 0
+--- !u!114 &467632934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467632929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448c798335616fb47ba28e7dc9e705d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &467632935
 Rigidbody2D:
   serializedVersion: 4
@@ -1006,9 +1019,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1404125385
+  m_SortingLayer: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 7a2828c05699c584886c9202f85361fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1028,7 +1041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578913339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.01, y: -1.47, z: 0}
+  m_LocalPosition: {x: 1.63, y: -1.39, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1393,7 +1406,7 @@ SpriteRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 0e2b1c222d6393040bf0e26cb627c1c2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4298683, g: 0.5148536, b: 0.5660378, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
