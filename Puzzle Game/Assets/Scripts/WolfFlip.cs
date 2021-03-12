@@ -6,44 +6,29 @@ public class WolfFlip : MonoBehaviour
 {
     public Rigidbody2D fliprigidbody2D;
     public SpriteRenderer spriteRenderer;
-    public bool cartSelected = true;
-    public bool zombieSelected = false;
     public bool wolfSelected = false;
-
+    public Animator animator;
     void Update()
     {
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            cartSelected = true;
-            zombieSelected = false;
             wolfSelected = false;
-
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            cartSelected = false;
-            zombieSelected = true;
             wolfSelected = false;
-
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
-            cartSelected = false;
-            zombieSelected = false;
             wolfSelected = true;
-
         }
-        // if (fliprigidbody2D.velocity.x >= 0f)
-        //{
-        //    spriteRenderer.flipX = false;
-
-        // }
-        // if (fliprigidbody2D.velocity.x < 0f)
-        //  {
-        //    spriteRenderer.flipX = true;
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            wolfSelected = false;
+        }
 
 
-        // }
+
         if (wolfSelected == true)
         {
             if (Input.GetKey(KeyCode.D))
@@ -54,6 +39,21 @@ public class WolfFlip : MonoBehaviour
             {
                 spriteRenderer.flipX = true;
             }
+
+            if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.A))
+            {
+
+                animator.SetFloat("wolfspeed", 1);
+            }
+            else
+            {
+                animator.SetFloat("wolfspeed", 0);
+            }
+
+        }
+        else
+        {
+            animator.SetFloat("wolfspeed", 0);
         }
     }
 }

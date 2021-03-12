@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CartMovement : MonoBehaviour
 {
+    public static CartMovement Instance;
     public Animator animator;
     public bool cartSelected = true;
     public bool zombieSelected = false;
@@ -12,7 +13,13 @@ public class CartMovement : MonoBehaviour
     public GameObject Player;
     public GameObject zombie;
     public GameObject wolf;
+    public GameObject bat;
+    public bool zombiespawned = false;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Update()
     {
         Physics2D.IgnoreLayerCollision(8, 9);
@@ -23,21 +30,28 @@ public class CartMovement : MonoBehaviour
             cartSelected = true;
             zombieSelected = false;
             wolfSelected = false;
-        
+            batSelected = false;
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
             cartSelected = false;
             zombieSelected = true;
             wolfSelected = false;
-           
+            batSelected = false;
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
             cartSelected = false;
             zombieSelected = false;
             wolfSelected = true;
-          
+            batSelected = false;
+        }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            cartSelected = false;
+            zombieSelected = false;
+            wolfSelected = false;
+            batSelected = true;
         }
 
         if (cartSelected == true)
@@ -53,9 +67,20 @@ public class CartMovement : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A))
             {
-                Player.transform.position += Vector3.left * 1.5f * Time.deltaTime;
+                Player.transform.position += Vector3.left * 1f * Time.deltaTime;
+                animator.SetFloat("isreversing", 1);
+            }
+            else
+            {
+                animator.SetFloat("isreversing", 0);
             }
         }
+        else
+        {
+            animator.SetFloat("speed", 0);
+            animator.SetFloat("isreversing", 0);
+        }
+
         if (zombieSelected == true)
         {
            
@@ -80,15 +105,25 @@ public class CartMovement : MonoBehaviour
             {
                 wolf.transform.position += Vector3.left * 2 * Time.deltaTime;
             }
-
-          
-
         }
-        Vector3 position = transform.position;
-        position.y = -1;
-        transform.position = position;
-      
-    }
-
-   
+        if (batSelected == true)
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                bat.transform.position += Vector3.right * 2 * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                bat.transform.position += Vector3.left * 2 * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                bat.transform.position += Vector3.up * 2 * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                bat.transform.position += Vector3.down * 2 * Time.deltaTime;
+            }
+        }
+    }  
 }
