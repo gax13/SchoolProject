@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GraveCollision : MonoBehaviour
+public class GraveCollision2 : MonoBehaviour
 {
     public GameObject Player;
     public GameObject DireWolf;
@@ -17,7 +17,7 @@ public class GraveCollision : MonoBehaviour
     public Sprite Grave;
     public Sprite Hole;
     public Sprite zombieInHole;
-   
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -28,10 +28,10 @@ public class GraveCollision : MonoBehaviour
 
         if (wolfcollision == true)
         {
-            if  (CartMovement.Instance.zombiespawned == false && IsZombieInHole == false && isGrave == true)
+            if (CartMovement.Instance.zombiespawned == false && IsZombieInHole == false && isGrave == true)
             {
                 Debug.Log("Wolfcollision");
-                Zombie.transform.position = new Vector3(2, -1, 0);
+                Zombie.transform.position = new Vector3(-1, -1, 0);
                 CartMovement.Instance.zombiespawned = true;
                 isHole = true;
                 ChangeSprite1();
@@ -57,12 +57,12 @@ public class GraveCollision : MonoBehaviour
         }
     }
 
-     void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-         if (col.gameObject.name == "Dire wolf")
-         {
-            wolfcollision = true; 
-         }
+        if (col.gameObject.name == "Dire wolf")
+        {
+            wolfcollision = true;
+        }
 
 
         if (col.gameObject.name == "zombie")

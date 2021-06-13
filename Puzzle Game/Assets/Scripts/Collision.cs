@@ -7,6 +7,7 @@ public class Collision : MonoBehaviour
     public GameObject Zombie;
     public GameObject barrier;
     public bool zombiecollision;
+    public bool isHole = true;
     private SpriteRenderer spriteRenderer;
     public Sprite Hole;
     public Sprite zombieInHole;
@@ -18,14 +19,18 @@ public class Collision : MonoBehaviour
 
     private void Update()
     {
-        if (zombiecollision == true)
+        if (isHole == true)
         {
-            Debug.Log("zombiecollision");
-            Zombie.transform.position = new Vector3(11, 2, 0);
-            CartMovement.Instance.zombiespawned = false;
-            ChangeSprite2();
-            barrier.transform.Translate(0, -5, 0);
-            zombiecollision = false;
+            if (zombiecollision == true)
+            {
+                Debug.Log("zombiecollision");
+                Zombie.transform.position = new Vector3(11, 2, 0);
+                CartMovement.Instance.zombiespawned = false;
+                ChangeSprite2();
+                barrier.transform.Translate(0, -5, 0);
+                zombiecollision = false;
+                isHole = false;
+            }
         }
     }
     public void OnTriggerEnter2D(Collider2D col)
